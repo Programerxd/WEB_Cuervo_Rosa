@@ -1,0 +1,50 @@
+---
+// src/components/ProductoCard.astro
+
+interface Props {
+    name: string;
+    description: string;
+    price: number;
+    imageSrc: string;
+}
+
+const { name, description, price, imageSrc } = Astro.props;
+// Formato de precio en pesos mexicanos
+const formattedPrice = new Intl.NumberFormat('es-MX', {
+    style: 'currency',
+    currency: 'MXN',
+    minimumFractionDigits: 0,
+}).format(price);
+---
+<div class="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col transition-shadow duration-300 hover:shadow-lg">
+    
+    <div class="h-52 bg-gray-100 flex items-center justify-center overflow-hidden">
+        <img 
+            src={imageSrc} 
+            alt={name} 
+            class="w-full h-full object-cover" 
+        />
+        {imageSrc === '' && (
+            <svg class="w-12 h-12 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M4 3h16a2 2 0 012 2v14a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2zm0 2v14h16V5H4zm3 10a1 1 0 00-1 1v1a1 1 0 001 1h10a1 1 0 001-1v-1a1 1 0 00-1-1H7zm11-8H6a1 1 0 00-1 1v5a1 1 0 001 1h12a1 1 0 001-1V8a1 1 0 00-1-1z"/>
+            </svg>
+        )}
+    </div>
+
+    <div class="p-4 flex flex-col flex-grow">
+        <h3 class="text-lg font-bold text-gray-900">{name}</h3>
+        <p class="text-sm text-gray-600 flex-grow mb-4">{description}</p>
+        
+        <div class="flex justify-between items-center mt-auto">
+            <span class="text-2xl font-bold text-gray-900">{formattedPrice}</span>
+            
+            <button class="flex items-center space-x-2 px-4 py-2 rounded-xl font-semibold text-white btn-primary-small shadow-md hover:shadow-lg transition-all duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart-dollar"><path stroke="none" d="M0 0h24v24H0z" 
+                fill="none"/><path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M13 17h-7v-14h-2" /><path d="M6 5l14 1l-.575 4.022m-4.925 2.978h-8.5" /><path d="M21 15h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5" /><path d="M19 21v1m0 -8v1" 
+                /></svg>
+                <span>Agregar</span>
+            </button>
+        </div>
+    </div>
+</div>

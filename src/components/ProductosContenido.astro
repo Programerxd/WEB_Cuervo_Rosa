@@ -1,0 +1,50 @@
+---
+// src/components/ProductosContenido.astro
+import ProductoCard from './ProductoCard.astro';
+
+// Datos de la Galería (replicando tus capturas de pantalla)
+const productos = [
+    { name: 'Vaselina Boycott 250g y 400g', description: 'Presentación de 400g $550 Lubricante tópico y sellador de pigmentos, reduce la fricción y el calor generado por las agujas, mejora la saturación de la tinta   ln:Efecto frío sobre la piel efecto vasoconstrictor que disminuye la cantidad de sangre la inflamación y enrojecimiento', price: 275, imageSrc: './productos/pt1.png' },
+    { name: 'Campos desechables 50pz', description: '10pz x$25 - 20pz x$45 (Impermeables, absorbentes e higiénicos)', price: 78, imageSrc: './productos/pt2.png' },
+    { name: 'Cubre clip pen o clip cord', description: '20pz x$30  Paquete 100pz (5cm x 80cm)', price: 90, imageSrc: './productos/pt3.png' },
+    { name: 'Hilo para Mapping (Hilo entintado)', description: 'Ideal para diseño de cejas y otros', price: 35, imageSrc: './productos/pt4.png' },
+];
+---
+<section id="productos-galeria" class="py-20 bg-white">
+    <div class="container mx-auto px-6 lg:px-8">
+        
+        <div class="text-center mb-16">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900">
+                <span class="text-gradient">Productos</span> Profesionales
+            </h1>
+            <p class="text-gray-600 text-xl max-w-4xl mx-auto leading-relaxed">
+                Cuida tu arte corporal con productos de la más alta calidad. Seleccionados por expertos para garantizar la mejor curación y mantenimiento.
+            </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {productos.map(p => (
+                <ProductoCard 
+                    name={p.name}
+                    description={p.description}
+                    price={p.price}
+                    imageSrc={p.imageSrc}
+                />
+            ))}
+        </div>
+    </div>
+</section>
+
+<section class="py-20 bg-gray-50 text-center">
+    <div class="container mx-auto px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-4 text-gray-900">
+            Calidad y Seguridad Garantizadas
+        </h2>
+        <p class="text-gray-600 text-lg mb-8 max-w-3xl mx-auto">
+            Todos nuestros productos están certificados y recomendados por profesionales. Trabajamos solo con marcas reconocidas en la industria del arte corporal para asegurar los mejores resultados en tu curación y mantenimiento.
+        </p>
+        <a href="/contactos" class="inline-block px-10 py-4 rounded-xl font-bold text-white text-lg btn-primary shadow-lg">
+            Consultar Disponibilidad
+        </a>
+    </div>
+</section>

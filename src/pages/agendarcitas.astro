@@ -1,0 +1,21 @@
+---
+// src/pages/agendarcitas.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import AgendarContenido from '../components/AgendarContenido.astro';
+import styles from '../styles/agendarcitas.css';
+
+// La ruta actual es /agendarcitas. 
+const currentPath = '/agendarcitas'; 
+---
+
+<Layout title="Agendar Cita - Cuervo Rosa Studio">
+    <Header currentPath={currentPath} />
+    
+    <main class="pt-20"> 
+        <AgendarContenido />
+    </main>
+    
+    <Footer />
+</Layout>

@@ -1,0 +1,78 @@
+---
+// src/pages/servicios.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ServicioDetalle from '../components/ServicioDetalle.astro';
+import styles from '../styles/services.css';
+
+// Datos para Tatuajes
+const tatuajesDetails = [
+    { title: 'Proceso', description: 'Desde el diseño conceptual hasta la aplicación, te acompañamos en cada paso. Nos enfocamos en la anatomía y la fluidez para que el tatuaje se adapte perfectamente a tu cuerpo.' },
+    { title: 'Materiales', description: 'Usamos tintas orgánicas de la más alta calidad y agujas estériles de un solo uso.' },
+    { title: 'Beneficios', description: 'Un tatuaje duradero y con colores vibrantes, que mantendrá su forma y significado a lo largo del tiempo.' },
+];
+
+// Datos para Micropigmentación
+const microDetails = [
+    { title: 'Proceso', description: 'Un arte de precisión que mejora tus rasgos de forma sutil. Realizamos un estudio de visagismo para asegurar que la forma y el color sean perfectos para tu rostro.' },
+    { title: 'Materiales', description: 'Pigmentos hipoalergénicos y equipo de micropigmentación de última generación.' },
+    { title: 'Beneficios', description: 'Resultados naturales y una rutina de belleza simplificada.' },
+];
+
+// Datos para Piercings
+const piercingDetails = [
+    { title: 'Proceso', description: 'Te asesoramos sobre la mejor ubicación y el tipo de joyería. La perforación es rápida y precisa, minimizando las molestias.' },
+    { title: 'Materiales', description: 'Joyería de titanio de grado implante y acero quirúrgico 316L, los estándares de la industria para garantizar una curación óptima.' },
+    { title: 'Beneficios', description: 'Una perforación segura, un curado rápido y la posibilidad de expresar tu estilo con joyería de alta calidad.' },
+];
+const currentPath = '/servicios'; 
+---
+
+<Layout title="Servicios - Cuervo Rosa Studio">
+    <Header currentPath={currentPath} />
+    
+    <main class="pt-20 bg-white"> 
+        <div class="container mx-auto px-6 lg:px-8">
+            
+            <div class="text-center py-16">
+                <h1 class="text-6xl md:text-7xl font-extrabold mb-4 text-gray-900">
+                    Arte, Calidad y <span class="text-gradient">Seguridad</span>
+                </h1>
+                <p class="text-gray-600 text-xl max-w-4xl mx-auto">
+                    En Cuervo Rosa Studio, tu bienestar es tan importante como la calidad del arte. Utilizamos equipo de vanguardia y seguimos estrictos protocolos de esterilización.
+                </p>
+            </div>
+
+            <ServicioDetalle
+                title="Tatuajes"
+                description="Cada línea, cada sombra, es el resultado de un proceso creativo colaborativo. Nos especializamos en estilos que van del minimalismo al realismo, utilizando tintas seguras y técnicas avanzadas."
+                imageSrc="/public/servicio/servicio.jpg"
+                imageAlt="Tatuaje de rosas en el brazo"
+                details={tatuajesDetails}
+                isImageLeft={false}
+            />
+            <hr class="my-16 border-gray-200" />
+
+            <ServicioDetalle
+                title="Micropigmentación"
+                description="Define, realza y armoniza tus rasgos con precisión artística. Cejas, labios y delineado de ojos con un acabado natural y duradero."
+                imageSrc="/public/servicio/servicios1.jpg"
+                imageAlt="Proceso de micropigmentación de cejas"
+                details={microDetails}
+                isImageLeft={true}
+            />
+            <hr class="my-16 border-gray-200" />
+            
+            <ServicioDetalle
+                title="Piercings Profesionales"
+                description="Una forma audaz de expresión. Ofrecemos una amplia selección de joyería de alta calidad, con materiales hipoalergénicos."
+                imageSrc="/public/servicio/servicios2.jpg"
+                imageAlt="Detalle de piercings en la oreja"
+                details={piercingDetails}
+                isImageLeft={false}
+            />
+        </div>
+    </main>
+    <Footer />
+</Layout>

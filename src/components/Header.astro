@@ -1,0 +1,45 @@
+---
+// src/components/Header.astro
+import NavLink from './NavLink.astro';
+
+interface Props {
+    // Nueva Prop: Declaramos que Header espera recibir la ruta
+    currentPath: string; 
+}
+
+const { currentPath } = Astro.props;
+
+// Definición de enlaces de navegación
+const navLinks = [
+    { href: '/', text: 'Inicio' },
+    { href: '/productos', text: 'Productos' },
+    { href: '/servicios', text: 'Servicios' },
+    { href: '/portafolio', text: 'Portafolio' },
+    { href: '/artistas', text: 'Artistas' },
+    { href: '/contactos', text: 'Contacto' },
+    { href: '/agendarcitas', text: 'Agendar Cita' },
+    { href: '/auth', text: 'Login' } 
+];
+---
+<header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <a href="/" class="flex-shrink-0 text-xl font-extrabold text-pink-600">
+                    Cuervo Rosa Studio
+                </a>
+            </div>
+            
+            <div class="hidden md:flex md:space-x-4 items-center">
+                {navLinks.map((link) => (
+                    <NavLink 
+                        href={link.href} 
+                        text={link.text}
+
+                        currentPath={currentPath} 
+                    />
+                ))}
+            </div>
+        </div>
+    </nav>
+</header>

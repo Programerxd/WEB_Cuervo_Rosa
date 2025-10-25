@@ -1,0 +1,20 @@
+---
+// src/pages/portafolio.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Galeria from '../components/Galeria.astro';
+import '../styles/global.css';
+// La ruta actual es /portafolio. 
+const currentPath = '/portafolio';
+---
+
+<Layout title="Portafolio - Cuervo Rosa Studio">
+    <Header currentPath={currentPath} />
+    
+    <main class="pt-20"> 
+        <Galeria />
+    </main>
+    
+    <Footer />
+</Layout>

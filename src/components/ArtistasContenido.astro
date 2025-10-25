@@ -1,0 +1,57 @@
+---
+// src/components/ArtistasContenido.astro
+import ArtistaBloque from './ArtistaBloque.astro'; // Usamos el nuevo bloque
+
+// Datos de los artistas, con las propiedades de imagen y orden.
+const artistas = [
+    {
+        name: "Esmeralda Bass",
+        specialty: "Micropigmentación & Estética",
+        experience: "5 años",
+        bio: "Especializada en retratos y diseños en blanco y negro con alto nivel de detalle. Su trabajo se caracteriza por la precisión anatómica y el juego de luces y sombras.",
+        instagramLink: "https://www.instagram.com/esmebaas29?igsh=MWR3eHUydjF4Zzh3MQ==",
+        profileImage: "./imagenartistas/artista.jpg", // Asegúrate de tener esta imagen
+        isImageLeft: false, // Imagen a la derecha
+    },
+];
+---
+<section id="artistas-page" class="py-20 bg-white">
+    <div class="container mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900">
+                La Pasión Detrás de la <span class="text-gradient">Aguja</span>
+            </h1>
+            <p class="text-gray-600 text-lg max-w-4xl mx-auto leading-relaxed">
+                Conoce al equipo que da vida a tus ideas. Cada artista en Cuervo Rosa Studio trae una visión única y un estilo inconfundible. Explora sus perfiles y encuentra a la persona ideal para tu próximo proyecto de arte corporal.
+            </p>
+        </div>
+
+        <div class="space-y-12">
+            {artistas.map((artista) => (
+                <ArtistaBloque 
+                    name={artista.name}
+                    specialty={artista.specialty}
+                    experience={artista.experience}
+                    bio={artista.bio}
+                    instagramLink={artista.instagramLink}
+                    profileImage={artista.profileImage}
+                    isImageLeft={artista.isImageLeft}
+                />
+            ))}
+        </div>
+    </div>
+</section>
+
+<section id="listo-para-empezar" class="py-20 bg-gray-50 text-center">
+    <div class="container mx-auto px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-4 text-gray-900">
+            ¿Listo para Comenzar tu Proyecto?
+        </h2>
+        <p class="text-gray-600 text-lg mb-8">
+            Agenda una consulta con uno de nuestros artistas y transforma tu idea en realidad
+        </p>
+        <a href="/contactos" class="inline-block px-10 py-4 rounded-xl font-bold text-white text-lg btn-primary shadow-lg">
+            Agendar Cita Ahora
+        </a>
+    </div>
+</section>

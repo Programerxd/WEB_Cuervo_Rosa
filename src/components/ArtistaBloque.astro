@@ -1,0 +1,48 @@
+---
+// src/components/ArtistaBloque.astro (NUEVO)
+import ArtistaCard from './ArtistasCard.astro';
+
+interface Props {
+    name: string;
+    specialty: string;
+    experience: string;
+    bio: string;
+    instagramLink: string;
+    profileImage: string; // Ruta de la imagen del artista
+    isImageLeft: boolean; // Si es true, la imagen va a la izquierda
+}
+
+const { name, specialty, experience, bio, instagramLink, profileImage, isImageLeft } = Astro.props;
+
+// Usamos order-2 para que la información vaya después de la imagen cuando isImageLeft es true.
+// En móvil, la imagen (order-1) siempre aparece primero.
+const imageOrderClass = isImageLeft ? 'lg:order-1' : 'lg:order-2';
+const infoOrderClass = isImageLeft ? 'lg:order-2' : 'lg:order-1';
+---
+
+<div class="grid lg:grid-cols-5 gap-0 rounded-2xl shadow-xl overflow-hidden">
+    
+    <div class:list={[
+        'col-span-2 h-96 lg:h-auto order-1', // order-1 en móvil para que la imagen siempre esté arriba
+        imageOrderClass
+    ]}>
+        <img 
+            src={profileImage}
+            alt={`Retrato de ${name}`}
+            class="w-full h-full object-cover"
+        />
+    </div>
+
+    <div class:list={[
+        'col-span-3 order-2', // order-2 en móvil para que la info esté abajo
+        infoOrderClass
+    ]}>
+        <ArtistaCard 
+            name={name}
+            specialty={specialty}
+            experience={experience}
+            bio={bio}
+            instagramLink={instagramLink}
+        />
+    </div>
+</div>

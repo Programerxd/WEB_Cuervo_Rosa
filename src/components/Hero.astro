@@ -1,0 +1,33 @@
+---
+// src/components/Hero.astro
+---
+<section id="inicio" class="hero-section flex items-center justify-center pt-20">
+    <div class="container mx-auto px-6 text-center">
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 leading-tight text-white">
+            Arte que Habita en tu <span class="text-gradient">Piel</span>
+        </h1>
+        
+        <p class="text-lg md:text-xl text-gray-200 max-w-4xl mx-auto mb-12 leading-relaxed">
+            En Cuervo Rosa Studio, transformamos ideas en arte corporal.<br>
+            Fusionamos diseño, técnica y seguridad para crear piezas únicas que<br class="hidden md:block">
+            cuentan tu historia.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
+            
+            <a href="#agendar" class="px-10 py-4 rounded-xl font-bold text-white text-lg btn-primary w-full sm:w-auto">
+                Agenda tu Cita Ahora
+            </a>
+            
+            <a href="/portafolio" class="px-10 py-4 rounded-xl font-bold text-gray-900 text-lg btn-secondary w-full sm:w-auto">
+                Ver Portafolio
+            </a>
+        </div>
+
+        <div class="scroll-indicator">
+            <svg class="w-8 h-8 mx-auto text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </div>
+</section>

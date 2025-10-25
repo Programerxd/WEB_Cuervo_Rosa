@@ -1,0 +1,65 @@
+---
+// src/components/Galeria.astro
+---
+<section id="portafolio-galeria" class="py-20 bg-white">
+    <div class="container mx-auto px-6 lg:px-8">
+        
+        <div class="text-center mb-16">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900">
+                Inspiración en Cada <span class="text-gradient">Detalle</span>
+            </h1>
+            <p class="text-gray-600 text-lg max-w-4xl mx-auto leading-relaxed">
+                Bienvenido a nuestra galería, el espacio donde el arte toma forma. Cada pieza que ves aquí es una historia, un sentimiento plasmado en la piel. Te invitamos a explorar las diferentes texturas, la precisión de las líneas y la riqueza del color.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <a href="/portafolio/tatuajes" class="group block rounded-2xl overflow-hidden shadow-xl transition-shadow duration-300 hover:shadow-2xl">
+                <div class="relative overflow-hidden">
+                    <img src="./portafolio/port1.jpg" 
+                         alt="Tatuaje Realista" 
+                         class="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-105">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-6 flex flex-col justify-end">
+                        <span class="text-white text-sm font-medium opacity-80">Tatuajes</span>
+                        <h3 class="text-white text-2xl font-bold mt-1">Tatuaje Realista</h3>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="/portafolio/micropigmentacion" class="group block rounded-2xl overflow-hidden shadow-xl transition-shadow duration-300 hover:shadow-2xl">
+                <div class="relative overflow-hidden">
+                    <img src="./portafolio/prt4.jpg" 
+                         alt="Micropigmentación de Cejas" 
+                         class="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-105">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-6 flex flex-col justify-end">
+                        <span class="text-white text-sm font-medium opacity-80">Micropigmentación</span>
+                        <h3 class="text-white text-2xl font-bold mt-1">Cejas Hyperrealistas</h3>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="/portafolio/piercings" class="group block rounded-2xl overflow-hidden shadow-xl transition-shadow duration-300 hover:shadow-2xl">
+                <div class="relative overflow-hidden">
+                    <img src="./portafolio/prt3.jpg" 
+                         alt="Combinación de Piercings" 
+                         class="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-105">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-6 flex flex-col justify-end">
+                        <span class="text-white text-sm font-medium opacity-80">Piercings</span>
+                        <h3 class="text-white text-2xl font-bold mt-1">Joyería de Alto Nivel</h3>
+                    </div>
+                </div>
+            </a>
+            
+        </div>
+        
+        <div class="text-center mt-16">
+            <p class="text-gray-600 text-lg mb-6">
+                ¿Te inspiraste? Agenda tu cita y crea tu próximo proyecto de arte corporal
+            </p>
+        </div>
+    </div>
+</section>

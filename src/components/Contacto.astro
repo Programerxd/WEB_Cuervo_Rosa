@@ -1,0 +1,100 @@
+---
+// src/components/Contacto.astro
+---
+<section id="contacto" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+                Visítanos o <span class="text-gradient">Contáctanos</span>
+            </h2>
+            <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                Estamos aquí para responder tus preguntas y ayudarte a comenzar tu próximo proyecto de arte corporal
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+            <div>
+                <div class="space-y-6">
+                    <div class="bg-white rounded-xl shadow-lg p-6 flex items-center gap-4">
+                        <div class="icon-circle w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center text-white flex-shrink-0">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900">Dirección</h4>
+                            <p class="text-gray-600">Colonia Roma Norte</p>
+                            <p class="text-gray-600">Ciudad de México, CDMX</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 flex items-center gap-4">
+                        <div class="icon-circle w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center text-white flex-shrink-0">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-phone-calling"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" /><path d="M15 7l0 .01" /><path d="M18 7l0 .01" /><path d="M21 7l0 .01" /></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900">Teléfono</h4>
+                            <p class="text-gray-600">+52 55 1234 5678</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 flex items-center gap-4">
+                        <div class="icon-circle w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center text-white flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z" /><path d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z" /></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900">Correo Electrónico</h4>
+                            <p class="text-gray-600">info@cuervorosa.studio</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 flex items-center gap-4">
+                        <div class="icon-circle w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center text-white flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-clock-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20.993 11.646a9 9 0 1 0 -9.318 9.348" /><path d="M12 7v5l1 1" /><path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M20.2 20.2l1.8 1.8" /></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900">Horario</h4>
+                            <p class="text-gray-600">Lunes - Viernes: 11:00 - 20:00</p>
+                            <p class="text-gray-600">Sábado: 11:00 - 20:00</p>
+                            <p class="text-gray-600">Domingo: Cerrado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-2xl font-bold mb-6 text-gray-900 text-center">Envíanos un Mensaje</h3>
+                <p class="text-gray-600 text-center mb-8">Responderemos a tu consulta a la brevedad posible.</p>
+
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required
+                               class="w-full px-5 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-600">
+                    </div>
+                    <div>
+                        <input type="email" id="correo" name="correo" placeholder="tu@correo.com" required
+                               class="w-full px-5 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-600">
+                    </div>
+                    <div>
+                        <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe tu consulta aquí..." required
+                                  class="w-full px-5 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-pink-600"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit"
+                                class="btn-primary w-full py-4 rounded-full font-bold text-white text-lg">
+                            <span class="flex items-center justify-center gap-2">
+                                Enviar Mensaje
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            </span>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="mt-8 bg-gray-900 rounded-xl h-96 flex items-center justify-center p-4">
+                    <div class="text-center text-gray-400">
+                        <svg class="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+                        <p>Mapa interactivo disponible próximamente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

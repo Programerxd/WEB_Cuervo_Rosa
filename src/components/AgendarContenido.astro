@@ -1,0 +1,134 @@
+---
+// src/components/AgendarContenido.astro
+// Este componente contiene todo el contenido principal de la página de agendamiento.
+
+const servicios = ["Tatuajes", "Micropigmentación", "Piercings Profesionales"];
+---
+
+<section id="agendar-cita" class="py-16 bg-white">
+    <div class="container mx-auto px-6 lg:px-8">
+
+        <div class="text-center mb-16">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900">
+                Tu Próximo Proyecto Comienza <span class="text-gradient">Aquí</span>
+            </h1>
+            <p class="text-gray-600 text-xl max-w-4xl mx-auto leading-relaxed">
+                El proceso es simple, rápido y eficiente. Sigue estos tres pasos para agendar tu cita y solicitar una cotización.
+            </p>
+        </div>
+        
+        {/* --- Bloque de Pasos (Paso 1, 2, 3) --- */}
+        <div class="grid md:grid-cols-3 gap-10 text-center mb-20">
+            
+            {/* Paso 1 */}
+            <div>
+                <div class="icon-circle w-24 h-24 bg-gradient-to-br from-pink-600 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-file-text"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 2l.117 .007a1 1 0 0 1 .876 .876l.007 .117v4l.005 .15a2 2 0 0 0 1.838 1.844l.157 .006h4l.117 .007a1 1 0 0 1 .876 .876l.007 .117v9a3 3 0 0 1 -2.824 2.995l-.176 .005h-10a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-14a3 3 0 0 1 2.824 -2.995l.176 -.005zm3 14h-6a1 1 0 0 0 0 2h6a1 1 0 0 0 0 -2m0 -4h-6a1 1 0 0 0 0 2h6a1 1 0 0 0 0 -2m-5 -4h-1a1 1 0 1 0 0 2h1a1 1 0 0 0 0 -2" /><path d="M19 7h-4l-.001 -4.001z" /></svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-2 text-gray-900">Paso 1: Cuéntanos tu Idea</h3>
+                <p class="text-gray-600">Completa el formulario con los detalles de tu proyecto: tipo de servicio, zona del cuerpo y referencias.</p>
+            </div>
+            
+            {/* Paso 2 */}
+            <div>
+                <div class="icon-circle w-24 h-24 bg-gradient-to-br from-pink-600 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-week"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" /><path d="M16 3v4" /><path d="M8 3v4" /><path d="M4 11h16" /><path d="M7 14h.013" /><path d="M10.01 14h.005" /><path d="M13.01 14h.005" /><path d="M16.015 14h.005" /><path d="M13.015 17h.005" /><path d="M7.01 17h.005" /><path d="M10.01 17h.005" /></svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-2 text-gray-900">Paso 2: Cotización y Disponibilidad</h3>
+                <p class="text-gray-600">Revisaremos tu solicitud y te contactaremos con una cotización y las fechas disponibles.</p>
+            </div>
+
+            {/* Paso 3 */}
+            <div>
+                <div class="icon-circle w-24 h-24 bg-gradient-to-br from-pink-600 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-circle-dashed-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95" /><path d="M3.69 8.56a9 9 0 0 0 -.69 3.44" /><path d="M3.69 15.44a9 9 0 0 0 1.95 2.92" /><path d="M8.56 20.31a9 9 0 0 0 3.44 .69" /><path d="M15.44 20.31a9 9 0 0 0 2.92 -1.95" /><path d="M20.31 15.44a9 9 0 0 0 .69 -3.44" /><path d="M20.31 8.56a9 9 0 0 0 -1.95 -2.92" /><path d="M15.44 3.69a9 9 0 0 0 -3.44 -.69" /><path d="M9 12l2 2l4 -4" /></svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-2 text-gray-900">Paso 3: Confirma y Crea</h3>
+                <p class="text-gray-600">Una vez que aceptas la cotización, confirma tu cita. ¡Estamos listos para hacer tu idea realidad!</p>
+            </div>
+        </div>
+
+        {/* --- Formulario de Cotización --- */}
+        <div class="max-w-4xl mx-auto p-10 bg-white rounded-xl shadow-2xl">
+            <form action="#" method="POST" class="space-y-8">
+                
+                {/* Primera Fila: Nombre y Correo */}
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <label for="nombre" class="block text-sm font-bold text-gray-700 mb-1">Nombre Completo *</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Juan Pérez" required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600">
+                    </div>
+                    <div>
+                        <label for="correo" class="block text-sm font-bold text-gray-700 mb-1">Correo Electrónico *</label>
+                        <input type="email" id="correo" name="correo" placeholder="juan@ejemplo.com" required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600">
+                    </div>
+                </div>
+
+                {/* Segunda Fila: Teléfono */}
+                <div>
+                    <label for="telefono" class="block text-sm font-bold text-gray-700 mb-1">Teléfono *</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="+52 55 1234 5678" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600">
+                </div>
+
+                {/* Tercera Fila: Tipo de Servicio y Zona */}
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <label for="servicio" class="block text-sm font-bold text-gray-700 mb-1">Tipo de Servicio *</label>
+                        <select id="servicio" name="servicio" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600 appearance-none bg-white">
+                            <option value="" disabled selected>Selecciona un servicio</option>
+                            {servicios.map(s => <option value={s}>{s}</option>)}
+                        </select>
+                    </div>
+                    <div>
+                        <label for="zona" class="block text-sm font-bold text-gray-700 mb-1">Zona del Cuerpo</label>
+                        <input type="text" id="zona" name="zona" placeholder="Ej: Brazo, pierna, cejas..."
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600">
+                    </div>
+                </div>
+
+                {/* Cuarta Fila: Descripción del Proyecto */}
+                <div>
+                    <label for="descripcion" class="block text-sm font-bold text-gray-700 mb-1">Descripción de tu Proyecto *</label>
+                    <textarea id="descripcion" name="descripcion" rows="6" required
+                              placeholder="Cuéntanos sobre tu idea, estilo preferido, tamaño aproximado, imágenes de referencia..."
+                              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600"></textarea>
+                </div>
+
+                {/* Botón de Envío */}
+                <div>
+                    <button type="submit"
+                            class="btn-primary w-full py-4 rounded-xl font-bold text-white text-lg shadow-2xl">
+                        Solicitar Cotización
+                    </button>
+                </div>
+            </form>
+
+            {/* Bloque de Información Post-Envío */}
+            <div class="mt-8 p-6 bg-gray-50 rounded-xl shadow-inner">
+                <h4 class="text-lg font-bold text-gray-900 mb-4">¿Qué sigue después de enviar el formulario?</h4>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-pink-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Recibirás una confirmación por correo electrónico
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-pink-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Nuestro equipo revisará tu solicitud en menos de 24 horas
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-pink-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Te contactaremos con una cotización personalizada y fechas disponibles
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-pink-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Podrás explorar el historial de trabajos de nuestros artistas
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

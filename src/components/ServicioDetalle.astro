@@ -1,0 +1,71 @@
+---
+// src/components/ServicioDetalle.astro
+
+interface Item {
+    title: string;
+    description: string;
+}
+
+interface Props {
+    title: string;
+    description: string;
+    imageSrc: string;
+    imageAlt: string;
+    details: Item[];
+    isImageLeft: boolean; 
+}
+
+const { title, description, imageSrc, imageAlt, details, isImageLeft } = Astro.props;
+
+// Clases de ordenamiento para alternar imagen/texto
+const infoOrderClass = isImageLeft ? 'lg:order-2' : 'lg:order-1';
+const imageOrderClass = isImageLeft ? 'lg:order-1' : 'lg:order-2';
+---
+
+<div id={title.toLowerCase()} class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center py-10">
+    
+    <div class:list={[
+        'order-1',
+        imageOrderClass,
+    ]}>
+        <img 
+            src={imageSrc}
+            alt={imageAlt}
+            class="w-full h-auto rounded-2xl shadow-2xl object-cover"
+        />
+    </div>
+
+    <div class:list={[
+        'order-2',
+        infoOrderClass,
+    ]}>
+        <h2 class="text-4xl font-extrabold mb-4 text-gray-900">{title}</h2>
+        <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+            {description}
+        </p>
+
+        <div class="space-y-6">
+            {details.map((item) => (
+                <div class="flex items-start">
+                    <svg class="w-6 h-6 text-pink-600 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <div class="ml-4">
+                        <h4 class="font-bold text-gray-900 mb-1 flex items-center">
+                            {/* Iconos específicos para replicar el diseño de la captura: */}
+                            {item.title === 'Proceso' && <svg class="w-5 h-5 text-pink-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.41-9.41a2 2 0 112.83 2.83L11.83 17H8v-3.83l9.59-9.59z"></path></svg>}
+                            {item.title === 'Materiales' && <svg class="w-5 h-5 text-pink-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>}
+                            {item.title === 'Beneficios' && <svg class="w-5 h-5 text-pink-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>}
+                            {item.title}
+                        </h4>
+                        <p class="text-gray-600 text-base">{item.description}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        <a href="/contactos" class="inline-block mt-8 px-8 py-3 rounded-xl font-bold text-white text-lg btn-primary shadow-lg">
+            Solicitar Cotización
+        </a>
+    </div>
+</div>

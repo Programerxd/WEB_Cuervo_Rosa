@@ -1,0 +1,21 @@
+---
+// src/pages/productos.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProductosContenido from '../components/ProductosContenido.astro';
+import styles from '../styles/products.css';
+// La ruta actual es /productos. 
+const currentPath = '/productos'; 
+---
+
+<Layout title="Productos" currentPath={Astro.url.pathname}> 
+    <Header currentPath={currentPath} />
+    
+    <main class="pt-20"> 
+        <ProductosContenido />
+    </main>
+    
+    <Footer />
+</Layout>
+    

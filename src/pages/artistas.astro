@@ -9,8 +9,7 @@ import '../styles/global.css';
 // La ruta actual es /artistas. 
 const currentPath = '/artistas'; 
 ---
-
-<Layout title="Artistas - Cuervo Rosa Studio">
+<Layout title="Artistas-Cuervo Rosa Studio" currentPath={Astro.url.pathname}> 
     <Header currentPath={currentPath} />
     
     <main class="pt-20"> 

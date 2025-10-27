@@ -9,8 +9,7 @@ import styles from '../styles/agendarcitas.css';
 // La ruta actual es /agendarcitas. 
 const currentPath = '/agendarcitas'; 
 ---
-
-<Layout title="Agendar Cita - Cuervo Rosa Studio">
+<Layout title="Citas-Cuervo Rosa Studio" currentPath={Astro.url.pathname}> 
     <Header currentPath={currentPath} />
     
     <main class="pt-20"> 

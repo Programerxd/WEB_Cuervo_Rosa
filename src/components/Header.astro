@@ -3,7 +3,6 @@
 import NavLink from './NavLink.astro';
 
 interface Props {
-    // Nueva Prop: Declaramos que Header espera recibir la ruta
     currentPath: string; 
 }
 
@@ -35,7 +34,6 @@ const navLinks = [
                     <NavLink 
                         href={link.href} 
                         text={link.text}
-
                         currentPath={currentPath} 
                     />
                 ))}

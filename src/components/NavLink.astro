@@ -3,13 +3,13 @@
 interface Props {
     href: string;
     text: string;
-    // Nueva Prop: La ruta actual, enviada desde el Layout/Página
+    
     currentPath: string;
 }
 const { href, text, currentPath } = Astro.props;
-// Lógica de comparación: Verifica si la ruta del enlace coincide con la ruta actual
+
 const isActive = currentPath === href;
-// Clases de Tailwind CSS
+
 const baseClass = "py-2 px-3 text-sm uppercase transition duration-300 ease-in-out";
 const activeClass = "text-pink-600 font-bold border-b-2 border-pink-600";
 const inactiveClass = "text-gray-700 hover:text-pink-600 hover:border-b-2 hover:border-pink-600";
@@ -18,7 +18,7 @@ const inactiveClass = "text-gray-700 hover:text-pink-600 hover:border-b-2 hover:
     href={href} 
     class:list={[
         baseClass,
-        // Aplica la clase activa o inactiva
+
         isActive ? activeClass : inactiveClass
     ]}
     aria-current={isActive ? "page" : undefined}

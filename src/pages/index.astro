@@ -10,11 +10,9 @@ import Artistas from '../components/Artistas.astro';
 import WhyChooseUs from '../components/WhyChooseUs.astro'; 
 
 // Definimos la ruta actual, que es la Home Page.
-const currentPath = '/';
+const currentPath = '/Inicio';
 ---
-
-<Layout title="Inicio - Cuervo Rosa Studio">
-  
+<Layout title="Página Principal" currentPath={Astro.url.pathname}> 
   <Header currentPath={currentPath} /> 
   
   <main>

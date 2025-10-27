@@ -13,9 +13,8 @@ const initialMode = url.searchParams.get('mode') === 'register' ? 'register' : '
 const currentPath = '/auth'; 
 const title = initialMode === 'login' ? 'Iniciar Sesión' : 'Registrarse';
 ---
-
-<Layout title={title}>
-    <Header currentPath={currentPath} /> 
+<Layout title="Login-Cuervo Rosa Studio" currentPath={Astro.url.pathname}> 
+   <Header currentPath={currentPath} /> 
     
     <main class="pt-20"> 
         <AuthForm initialMode={initialMode} />

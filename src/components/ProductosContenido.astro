@@ -2,13 +2,35 @@
 // src/components/ProductosContenido.astro
 import ProductoCard from './ProductoCard.astro';
 
-// Datos de la Galería (replicando tus capturas de pantalla)
 const productos = [
-    { name: 'Vaselina Boycott 250g y 400g', description: 'Presentación de 400g $550 Lubricante tópico y sellador de pigmentos, reduce la fricción y el calor generado por las agujas, mejora la saturación de la tinta   ln:Efecto frío sobre la piel efecto vasoconstrictor que disminuye la cantidad de sangre la inflamación y enrojecimiento', price: 275, imageSrc: './productos/pt1.png' },
-    { name: 'Campos desechables 50pz', description: '10pz x$25 - 20pz x$45 (Impermeables, absorbentes e higiénicos)', price: 78, imageSrc: './productos/pt2.png' },
-    { name: 'Cubre clip pen o clip cord', description: '20pz x$30  Paquete 100pz (5cm x 80cm)', price: 90, imageSrc: './productos/pt3.png' },
-    { name: 'Hilo para Mapping (Hilo entintado)', description: 'Ideal para diseño de cejas y otros', price: 35, imageSrc: './productos/pt4.png' },
+    { name: 'Vaselina Boycott', priceInfo: '250g-$275 y 400g-$550', description: 'Lubricante topico y sellador de pigmentos', imageSrc: '/img/Vaselina-Boycott.png' },
+    { name: 'Campos desechables', priceInfo: '$78', description: 'Impermeables, absorbentes e higienicos', imageSrc: '/img/Campos-desechables.png' },
+    { name: 'Cubre clip pen', priceInfo: '20pz x $30 y 100pz x $100', description: 'clip cord', imageSrc: '/img/Clip-cord.png' },
+    { name: 'Hilo para Mapping', priceInfo: '$35', description: 'Para diseños de cejas y otros', imageSrc: '/img/Hilo-Mapping.png' },
+    { name: 'Lapiz de cera para cejas', priceInfo: '$70', description: 'Mapping larga duracion, resistente al agua', imageSrc: '/img/Lapiz-Cera.png' },
+    { name: 'Piseta', priceInfo: '250ml x $45 y 500ml x $55', description: '250ml y 500ml', imageSrc: '/img/Piseta.png' },
+    { name: 'Papel Hectografico', priceInfo: '$30', description: 'Papel Hectografico para impresora', imageSrc: '/img/Papel-Hectografico.png' },
+    { name: 'Papel Hectografico Kores', priceInfo: '$25', description: 'Papel hecotgrafico Kores', imageSrc: '/img/Hectografico.png' },
+    { name: 'AquaSolid Sanink', priceInfo: '2oz x $60 y 4oz x $120', description: 'Solidifica liquidos', imageSrc: '/img/AquaSolid.png' },
+    { name: 'Dispensador de espuma transparente', priceInfo: '$55', description: 'Dispensa espuma con solo aplastar la botella de 500ml', imageSrc: '/img/Dispensador-Transparente.png' },
+    { name: 'Dispensador de espuma', priceInfo: '$45', description: 'Dispensador de espuma. Rosa y Negro', imageSrc: '/img/Disensador-Espuma.png' },
+    { name: 'Antibenzil concentrado Rosa', priceInfo: '$65', description: 'Antibenzil concentrado de 1L Rosa', imageSrc: '/img/Antibenzil-Concentrado.png' },
+    { name: 'Antibenzil concentrado 1L', priceInfo: '$85', description: 'Antibenzil concentrado de 1L', imageSrc: '/img/Antibenzil-1l.png' },
+    { name: 'Contenedor de residuos 4L', priceInfo: '$80', description: 'Contenedor 4L para material punzocontartantes', imageSrc: '/img/Contenedor.png' },
+    { name: 'Cubre Pen Black Rose', priceInfo: '$88', description: 'Black rose (5.5cm x 18cm. 200pcs)', imageSrc: '/img/Cubre-Pen.png' },
+    { name: 'Guantes Nitrilo', priceInfo: '$150 (Caja)', description: 'Guantes Nitrilo CH, M, G', imageSrc: '/img/Guantes-Nitrilo.png' },
+    { name: 'Transfer Boycott', priceInfo: '1oz - 30z', description: '1oz - 30z', imageSrc: '/img/Transfer-Boycott.png' },
+    { name: 'Desechables Lip Brushes', priceInfo: '$40', description: 'Lip brushes - Cepillo para ceja y pestañas', imageSrc: '/img/Desechables.png' },
+    { name: 'Cartuchos para Tatuajes', priceInfo: 'Consultar medidas', description: 'Preguntar por medidas en existencia', imageSrc: '/img/Cartuchos-Tatuajes.png' },
+    { name: 'Anestesia Topica TKTK', priceInfo: '$200', description: 'Anestesia en crema', imageSrc: '/img/Anestesia-Topica.png' },
+    { name: 'Mixer para Tintas', priceInfo: '$100', description: 'Negro, Fushia, Morado y Blanco', imageSrc: '/img/Mixer-Tintas.png' },
+    { name: 'Dynamic Triple Black', priceInfo: '1/2oz, 1 oz y 8oz', description: '1/2oz, 1 oz y 8oz', imageSrc: '/img/Dynamic-Triple.png' },
+    { name: 'Witch Hanzel Zita', priceInfo: '$95', description: 'Diluyente', imageSrc: '/img/Witch-Hazel.png' },
+    { name: 'Vitamina A y D', priceInfo: '$12', description: 'Crema para cuidado de tatuaje y micropigmentacion 5g', imageSrc: '/img/Vitamina-AyD.png' },
+    { name: 'Retapas', priceInfo: '$40', description: 'Retapas (Cups) CH, M, G', imageSrc: '/img/Retapas.jpg' },
+    { name: 'Cinta Cubre Grip', priceInfo: '$50', description: 'Cinta Cubre Grip 5cm de ancho', imageSrc: '/img/Cinta-Cubre-Grip.jpg' }
 ];
+
 ---
 <section id="productos-galeria" class="py-20 bg-white">
     <div class="container mx-auto px-6 lg:px-8">
@@ -22,12 +44,12 @@ const productos = [
             </p>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {productos.map(p => (
                 <ProductoCard 
                     name={p.name}
                     description={p.description}
-                    price={p.price}
+                    priceInfo={p.priceInfo}
                     imageSrc={p.imageSrc}
                 />
             ))}
@@ -43,8 +65,5 @@ const productos = [
         <p class="text-gray-600 text-lg mb-8 max-w-3xl mx-auto">
             Todos nuestros productos están certificados y recomendados por profesionales. Trabajamos solo con marcas reconocidas en la industria del arte corporal para asegurar los mejores resultados en tu curación y mantenimiento.
         </p>
-        <a href="/contactos" class="inline-block px-10 py-4 rounded-xl font-bold text-white text-lg btn-primary shadow-lg">
-            Consultar Disponibilidad
-        </a>
     </div>
 </section>

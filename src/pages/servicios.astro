@@ -28,8 +28,7 @@ const piercingDetails = [
 ];
 const currentPath = '/servicios'; 
 ---
-
-<Layout title="Servicios - Cuervo Rosa Studio">
+<Layout title="Servicios-Cuervo Rosa Studio" currentPath={Astro.url.pathname}> 
     <Header currentPath={currentPath} />
     
     <main class="pt-20 bg-white"> 

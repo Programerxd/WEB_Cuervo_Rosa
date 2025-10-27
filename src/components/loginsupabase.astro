@@ -1,0 +1,39 @@
+---
+---
+<script>
+    import { supabase } from "../lib/supabase";
+
+    // -----------------------------------------------------
+
+    const getFormDataValue = (formData: FormData, key: string): string => {
+        return formData.get(key) as string;
+    };
+
+    document.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const boton = event.submitter as HTMLButtonElement
+        if(boton.value == 'registrar') {
+
+            const formData = new FormData(event.target as HTMLFormElement);
+
+            const email = getFormDataValue(formData, 'register-email');
+            const password = getFormDataValue(formData, 'register-password');
+            const phone = getFormDataValue(formData, 'register-phone');
+            const name = getFormDataValue(formData, 'register-name'); // El nombre se usará en el futuro para 'update'
+
+            const { error, data } = await supabase.from('usuarios').insert([{
+                nombre: name,
+                correo: email,
+                contrasena: password,
+                numerotelefono: phone
+            }]);
+
+            if (error) {
+                console.log(error);
+            } else {
+                JSON.stringify(data);
+            }
+        }
+    });
+</script>
